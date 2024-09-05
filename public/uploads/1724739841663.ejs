@@ -1,0 +1,37 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Login with OTP</h2>
+
+                    <!-- Phone Number Input Section -->
+                    <div ng-hide="isOtpSent">
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number:</label>
+                            <input type="text" id="phoneNumber" class="form-control" ng-model="phoneNumber" placeholder="Enter your phone number">
+                        </div>
+                        <button class="btn btn-primary btn-block" ng-click="sendOtp()">
+                            Send OTP
+                        </button>
+                    </div>
+
+                    <!-- OTP Input Section -->
+                    <div ng-show="isOtpSent">
+                        <div class="form-group">
+                            <label for="otp">OTP:</label>
+                            <input type="text" id="otp" class="form-control" ng-model="otp" placeholder="Enter the OTP">
+                        </div>
+                        <button class="btn btn-primary btn-block" ng-click="verifyOtp()">
+                            Verify OTP
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>

@@ -1,0 +1,40 @@
+<!-- Upload Document Section -->
+ <div>
+    <h2>Upload Document</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="document" required>
+    <button type="submit">
+        <i class="fas fa-upload"></i> Upload Document
+    </button>
+</form>
+</div>
+
+<!-- View Documents Section -->
+<div>
+    <h2>View Documents</h2>
+    <div class="container">
+        <div class="row">
+            <% documents.forEach(doc => { %>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://png.pngtree.com/png-clipart/20190617/original/pngtree-document-vector-icon-png-image_3876242.jpg" alt="Document Thumbnail" style="width: 100%; height: auto; object-fit: contain;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="/uploads/<%= doc.filename %>" target="_blank">
+                                <span><%= doc.originalname %></span>
+                            </a>
+                        </h5>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-primary"><i class="fas fa-file-alt"></i> View</button>
+                            <form action="/documents/delete/<%= doc._id %>" method="POST" style="display:inline;">
+                                <button class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</button>
+                            </form>
+                            <button class="btn btn-secondary"><i class="fas fa-share-alt"></i> Share</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</div>

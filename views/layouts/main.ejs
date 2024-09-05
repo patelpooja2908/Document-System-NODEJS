@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= locals.title %></title>
+    <meta name="description" content="<%= locals.description %>">
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" defer src="/js/scripts.js"></script>
+     <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Conditionally include the header only if the user is logged in -->
+    <% if (user) { %>
+        <%- include('../partials/header.ejs')  %>
+    <% } %>
+ 
+        <main class="main">
+            <%- body %>
+        </main>
+        
+        <!-- Bootstrap JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- AngularJS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <!-- Your AngularJS App Script -->
+        <script src="app.js"></script>
+</body>
+</html>

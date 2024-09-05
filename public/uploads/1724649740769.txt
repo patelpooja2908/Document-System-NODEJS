@@ -1,0 +1,13 @@
+Question 1:-
+1. Which graduation degree most likely to go with MBA? Paste the appropriate rule
+
+Best rules found:
+
+ 1. PG_Major_Course=MBA 8 ==> Graduation=BCA 8    <conf:(1)> lift:(1.45) lev:(0.16) [2] conv:(2.5)
+
+Questions 2:-
+2. What is impact of HSC Class attribute in PG course selection? Paste the most affective rule.
+
+Best rules found:
+
+ 3. HSC_Class=SecondClass Graduation=BCA 7 ==> PG_Major_Course=MBA 7    <conf:(1)> lift:(2) lev:(0.22) [3] conv:(3.5)

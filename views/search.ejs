@@ -1,0 +1,31 @@
+<div class="author">
+    <h1 class="author__heading">Search Results</h1>
+  </div>
+  
+  <section class="articles">
+  
+    <div>
+      <h2>View Documents</h2>
+      <ul class="article-ul">
+          <% documents.forEach(doc => { %>
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="card">
+                      <img class="card-img-top" src="https://via.placeholder.com/300x200" alt="Document Thumbnail">
+                      <div class="card-body">
+                          <h5 class="card-title"><a href="/uploads/<%= doc.filename %>" target="_blank">
+                              <span><%= doc.originalname %></span>
+                          </a></h5>
+                              <button type="submit"><i class="fas fa-file-alt"></i> View</button>
+                          <form action="/documents/delete/<%= doc._id %>" method="POST" style="display:inline;">
+                              <button type="submit"><i class="fas fa-trash-alt"></i> Delete</button>
+                          </form>
+                              <button type="submit"><i class="fas fa-share-alt"></i> Share</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <% }) %>
+      </ul>
+  </div>
+  </section>
